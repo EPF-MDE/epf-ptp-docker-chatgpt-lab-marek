@@ -30,7 +30,7 @@ def chatgpt():
     return response
 
 
-@app.route('/create_code', methods=['POST'])
+@app.route('/create_code', methods=['POST'])#we use the POST method because we send data to the API
 def create_code():
     data = request.json
     #we set the language and the content
