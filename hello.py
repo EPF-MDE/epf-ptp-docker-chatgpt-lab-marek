@@ -33,9 +33,12 @@ def chatgpt():
 @app.route('/create_code', methods=['POST'])
 def create_code():
     data = request.json
+    #we set the language and the content
     language = data['language']
     content = data['content']
+    #we create the prompt
     completion = openai.Completion.create(
+        #we use the davinci-codex model
         engine="davinci-codex",
         prompt=f"Generate {language} code:\n{content}\n",
         max_tokens=1024,
@@ -43,5 +46,6 @@ def create_code():
         stop=None,
         temperature=0.7,
     )
-    response = completion.choices[0].text.strip()
+    #we return the response from the API 
+    response = completion.choices[0].text.strip() #the completion is a list of choices, we take the first one
     return response
