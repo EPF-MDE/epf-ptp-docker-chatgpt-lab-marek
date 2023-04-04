@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask,request
 import os
 import openai
 
@@ -6,10 +6,9 @@ app = Flask(__name__)
 
 openai.api_key = os.environ.get('OPENAI_KEY')
 
-
 @app.route('/')
 def index():
-    return "<h1>Hello, New!</h1>"
+    return "<h1>Hello, World!</h1>"
 
 
 @app.route('/chatgpt')
