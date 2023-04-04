@@ -9,7 +9,7 @@ openai.api_key = os.environ.get('OPENAI_KEY')
 
 @app.route('/')
 def index():
-    return "<h1>New, Function , added!</h1>"
+    return "<h1>Hello, New!</h1>"
 
 
 @app.route('/chatgpt')
